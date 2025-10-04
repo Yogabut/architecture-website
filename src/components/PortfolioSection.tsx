@@ -31,54 +31,50 @@ const projects = [
 
 const PortfolioSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="portfolio" className="py-32 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-heading font-light text-foreground mb-6">
-            Featured <span className="text-gold">Projects</span>
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4 px-4 py-1 bg-gold/10 rounded-full">
+            <span className="text-sm font-medium text-gold">Our Work</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-heading font-light text-foreground mb-6">
+            Featured <span className="text-gold font-normal">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-8"></div>
+          <div className="w-16 h-1 bg-gradient-gold mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover our latest architectural achievements that showcase innovation, 
-            sustainability, and timeless design excellence.
+            Explore our portfolio of distinguished projects that showcase our commitment to 
+            design excellence and innovation.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="group overflow-hidden bg-card border-border hover:shadow-elegant transition-all duration-500">
-              <div className="relative overflow-hidden">
+            <Card 
+              key={index} 
+              className="group overflow-hidden border border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 bg-card"
+            >
+              <div className="relative h-80 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <Button variant="outline" size="sm" className="bg-white-soft/10 border-white-soft/20 text-white-soft hover:bg-white-soft hover:text-charcoal">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    View Project
-                  </Button>
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="inline-block px-3 py-1 bg-gold text-white text-xs font-semibold rounded-full mb-3">
+                    {project.category}
+                  </span>
+                  <p className="text-background text-sm leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
               </div>
-              
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm text-gold font-medium">{project.category}</span>
-                  <span className="text-sm text-muted-foreground">{project.year}</span>
-                </div>
-                
-                <h3 className="text-xl font-heading text-foreground mb-3">{project.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+              <div className="p-6 bg-card">
+                <h3 className="text-2xl font-heading text-foreground mb-2 font-medium">{project.title}</h3>
+                <p className="text-muted-foreground text-sm">{project.year}</p>
               </div>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="border-gold text-gold hover:bg-gold hover:text-charcoal transition-all duration-300">
-            View All Projects
-          </Button>
         </div>
       </div>
     </section>

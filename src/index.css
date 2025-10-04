@@ -2,60 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Architecture Studio Design System - Elegant Dark Theme with Gold Accents */
+/* Architecture Studio Design System - Elegant Light Theme with Gold Accents */
 
 @layer base {
   :root {
-    /* Dark Elegant Theme */
-    --background: 220 8% 8%;
-    --foreground: 0 0% 98%;
+    /* Light Elegant Theme */
+    --background: 40 20% 97%;
+    --foreground: 220 15% 15%;
 
-    --card: 220 10% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
 
-    --popover: 220 10% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 220 8% 8%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 220 15% 15%;
+    --primary-foreground: 40 20% 97%;
 
-    --secondary: 220 10% 15%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 40 15% 92%;
+    --secondary-foreground: 220 15% 15%;
 
-    --muted: 220 8% 18%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 40 12% 90%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 45 95% 70%;
-    --accent-foreground: 220 8% 8%;
+    --accent: 42 88% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 10% 20%;
-    --input: 220 10% 20%;
-    --ring: 45 95% 70%;
+    --border: 40 12% 88%;
+    --input: 40 12% 88%;
+    --ring: 42 88% 55%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
     /* Custom Architecture Studio Colors */
-    --gold: 45 95% 70%;
-    --gold-dark: 42 85% 55%;
+    --gold: 42 88% 55%;
+    --gold-light: 45 95% 70%;
+    --gold-dark: 38 75% 45%;
     --bronze: 30 50% 45%;
-    --charcoal: 220 8% 8%;
-    --charcoal-light: 220 10% 15%;
-    --slate: 220 8% 25%;
-    --white-soft: 0 0% 98%;
-    --gray-light: 0 0% 85%;
+    --charcoal: 220 15% 15%;
+    --charcoal-light: 220 12% 25%;
+    --slate: 220 10% 45%;
+    --cream: 40 20% 97%;
+    --gray-soft: 220 8% 65%;
 
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(45 95% 70%) 0%, hsl(42 85% 55%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(220 8% 8%) 0%, hsl(220 10% 12%) 100%);
-    --gradient-overlay: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    --gradient-gold: linear-gradient(135deg, hsl(42 88% 55%) 0%, hsl(38 75% 45%) 100%);
+    --gradient-light: linear-gradient(180deg, hsl(40 20% 97%) 0%, hsl(40 15% 92%) 100%);
+    --gradient-overlay: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.7));
 
     /* Shadows */
-    --shadow-elegant: 0 20px 60px -12px rgba(0, 0, 0, 0.6);
-    --shadow-gold: 0 10px 30px -10px rgba(255, 212, 102, 0.3);
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-elegant: 0 20px 60px -15px rgba(0, 0, 0, 0.12);
+    --shadow-gold: 0 10px 30px -10px rgba(212, 155, 45, 0.25);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
 
     /* Typography */
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

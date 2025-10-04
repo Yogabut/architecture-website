@@ -31,43 +31,33 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-24 bg-secondary/30">
+    <section id="services" className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-heading font-light text-foreground mb-6">
-            Our <span className="text-gold">Services</span>
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4 px-4 py-1 bg-gold/10 rounded-full">
+            <span className="text-sm font-medium text-gold">What We Offer</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-heading font-light text-foreground mb-6">
+            Our <span className="text-gold font-normal">Services</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-8"></div>
+          <div className="w-16 h-1 bg-gradient-gold mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Comprehensive architectural solutions tailored to bring your vision to life with 
-            unparalleled expertise and attention to detail.
+            precision, creativity, and expertise.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.slice(0, 3).map((service, index) => (
-            <Card key={index} className="p-8 bg-card border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-gold rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="h-8 w-8 text-charcoal" />
-                </div>
-                <h3 className="text-2xl font-heading text-foreground mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+          {services.map((service, index) => (
+            <Card 
+              key={index} 
+              className="p-8 bg-card border border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-gold/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gold/20">
+                <service.icon className="h-8 w-8 text-gold" />
               </div>
-            </Card>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-          {services.slice(3).map((service, index) => (
-            <Card key={index + 3} className="p-8 bg-card border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-gradient-gold rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="h-8 w-8 text-charcoal" />
-                </div>
-                <h3 className="text-2xl font-heading text-foreground mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-              </div>
+              <h3 className="text-2xl font-heading text-foreground mb-4 font-medium">{service.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
             </Card>
           ))}
         </div>

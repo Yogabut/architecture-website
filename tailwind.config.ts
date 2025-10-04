@@ -55,6 +55,7 @@ export default {
 				// Architecture Studio Custom Colors
 				gold: {
 					DEFAULT: 'hsl(var(--gold))',
+					light: 'hsl(var(--gold-light))',
 					dark: 'hsl(var(--gold-dark))'
 				},
 				bronze: 'hsl(var(--bronze))',
@@ -63,18 +64,19 @@ export default {
 					light: 'hsl(var(--charcoal-light))'
 				},
 				slate: 'hsl(var(--slate))',
-				'white-soft': 'hsl(var(--white-soft))',
-				'gray-light': 'hsl(var(--gray-light))'
+				cream: 'hsl(var(--cream))',
+				'gray-soft': 'hsl(var(--gray-soft))'
 			},
 			backgroundImage: {
 				'gradient-gold': 'var(--gradient-gold)',
-				'gradient-dark': 'var(--gradient-dark)',
+				'gradient-light': 'var(--gradient-light)',
 				'gradient-overlay': 'var(--gradient-overlay)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'gold': 'var(--shadow-gold)',
-				'soft': 'var(--shadow-soft)'
+				'soft': 'var(--shadow-soft)',
+				'card': 'var(--shadow-card)'
 			},
 			fontFamily: {
 				'heading': 'var(--font-heading)',

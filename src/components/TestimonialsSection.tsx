@@ -27,13 +27,16 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-heading font-light text-foreground mb-6">
-            What Our <span className="text-gold">Clients Say</span>
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4 px-4 py-1 bg-gold/10 rounded-full">
+            <span className="text-sm font-medium text-gold">Testimonials</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-heading font-light text-foreground mb-6">
+            What Our <span className="text-gold font-normal">Clients Say</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-8"></div>
+          <div className="w-16 h-1 bg-gradient-gold mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Trusted by clients worldwide for delivering exceptional architectural experiences 
             that stand the test of time.
@@ -42,7 +45,7 @@ const TestimonialsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="p-8 bg-card border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group">
+            <Card key={index} className="p-8 bg-card border border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 group">
               {/* Rating Stars */}
               <div className="flex space-x-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -51,16 +54,16 @@ const TestimonialsSection = () => {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-muted-foreground leading-relaxed mb-6 italic">
+              <blockquote className="text-muted-foreground leading-relaxed mb-6">
                 "{testimonial.quote}"
               </blockquote>
 
               {/* Client Info */}
-              <div className="flex items-center">
+              <div className="flex items-center pt-4 border-t border-border">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
+                  className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gold/20"
                 />
                 <div>
                   <h4 className="text-foreground font-medium">{testimonial.name}</h4>

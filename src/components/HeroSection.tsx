@@ -1,52 +1,60 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDown, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-architecture.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Modern Architecture" 
-          className="w-full h-full object-cover"
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Modern architectural design"
+          className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-        <div className="animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-heading font-light text-white-soft mb-8 leading-tight">
-            Designing
-            <br />
-            <span className="bg-gradient-gold bg-clip-text text-transparent font-normal">
-              Timeless Spaces
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-light mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            We create architectural masterpieces that blend innovation with timeless elegance, 
-            transforming your vision into extraordinary living spaces.
-          </p>
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mt-20">
+        <div className="inline-block mb-6 px-6 py-2 bg-secondary rounded-full">
+          <span className="text-sm font-medium text-gold">Premium Architecture Studio</span>
+        </div>
 
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-heading font-light text-foreground mb-6 leading-tight animate-fade-in">
+          Designing Timeless
+          <br />
+          <span className="text-gold font-normal">Spaces</span>
+        </h1>
+
+        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-up">
+          Where innovation meets elegance. We transform visions into architectural masterpieces 
+          that stand the test of time.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Button 
-            variant="default" 
             size="lg"
-            className="bg-gradient-gold text-charcoal hover:shadow-gold transition-all duration-500 px-8 py-4 text-lg font-medium group"
+            className="bg-gradient-gold text-white hover:shadow-gold transition-all duration-500 px-10 py-6 text-lg font-medium group rounded-full"
           >
+            <MessageCircle className="mr-2 h-5 w-5" />
             Get Consultation
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </Button>
+
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="border-2 border-border text-foreground hover:bg-secondary transition-all duration-500 px-10 py-6 text-lg rounded-full"
+          >
+            View Portfolio
           </Button>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-gold rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gold rounded-full mt-2 animate-bounce"></div>
-        </div>
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <ArrowDown className="h-6 w-6 text-muted-foreground" />
       </div>
     </section>
   );
