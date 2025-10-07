@@ -85,18 +85,20 @@ const ContactSection = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="p-6 border border-border bg-card hover:shadow-elegant transition-all duration-300">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gold/20 to-gold/5 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 border border-gold/20">
-                    <info.icon className="h-6 w-6 text-gold" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-heading text-foreground mb-2 font-medium">{info.title}</h3>
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-muted-foreground leading-relaxed">{detail}</p>
-                    ))}
+              <Card key={index} className="p-6 border border-border rounded-xl bg-card hover:shadow-elegant transition-all duration-300 hover:border-gold/30">
+                <div className="w-14 h-14 bg-gradient-to-br from-gold/20 to-gold/5 rounded-xl flex items-center justify-center text-center flex-shrink-0 border border-gold/20">
+                    <info.icon className="h-7 w-7 text-gold" />
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl font-heading text-foreground mb-3 font-semibold">{info.title}</h3>
+                    <div className="space-y-1.5">
+                      {info.details.map((detail, idx) => (
+                        <p key={idx} className="text-muted-foreground leading-relaxed text-[15px]">{detail}</p>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Card>

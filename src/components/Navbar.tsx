@@ -14,14 +14,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-heading font-semibold text-foreground">
-              Arch<span className="text-gold">Studio</span>
-            </h1>
+            <img src="/arch.png" className="h-12" alt="" />
           </div>
 
           {/* Desktop Menu */}
@@ -62,17 +60,6 @@ const Navbar = () => {
             >
               Contact
             </button>
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center">
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-gradient-gold text-white hover:shadow-gold transition-all duration-300"
-            >
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Get Consultation
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -123,13 +110,6 @@ const Navbar = () => {
             >
               Contact
             </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="w-full bg-gradient-gold text-white hover:shadow-gold transition-all duration-300"
-            >
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Get Consultation
-            </Button>
           </div>
         )}
       </div>

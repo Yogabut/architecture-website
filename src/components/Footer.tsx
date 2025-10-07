@@ -72,7 +72,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-border pt-8">
           <p className="text-center text-muted-foreground text-sm">
-            © 2024 ArchStudio. All rights reserved. Designed with passion for architectural excellence.
+            © 2025 ArchStudio. All rights reserved. Designed with passion for architectural excellence.
           </p>
         </div>
       </div>
