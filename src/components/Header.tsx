@@ -81,13 +81,6 @@ const HeaderSection: React.FC = () => {
                             {currentSlide.Subtitle}
                         </h2>
                         
-                        {/* Description */}
-                        <p 
-                            key={`desc-${currentSlide.id}`}
-                            className="mb-8 text-lg leading-relaxed text-gray-300 sm:text-xl animate-[fadeInUp_0.8s_ease-out_0.4s_both]"
-                        >
-                            {currentSlide.description}
-                        </p>
                     </div>
                 </div>
             </div>
