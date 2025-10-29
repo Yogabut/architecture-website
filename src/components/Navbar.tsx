@@ -25,38 +25,38 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection("home")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => scrollToSection("header")}
+              className="text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection("process")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Process
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Contact
             </button>
@@ -75,38 +75,38 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-4 border-t border-border">
             <button
-              onClick={() => scrollToSection("home")}
-              className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => scrollToSection("header")}
+              className="block w-full text-right py-2 text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="block w-full text-right py-2 text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="block w-full text-right py-2 text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="block w-full text-right py-2 text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection("process")}
-              className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="block w-full text-right py-2 text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Process
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="block w-full text-right py-2 text-sm font-medium text-amber-400 hover:text-foreground transition-colors"
             >
               Contact
             </button>
