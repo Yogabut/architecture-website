@@ -1,10 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
 import { Card } from "@/components/ui/card";
-import  projects  from '@/lib/projects'
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import architectureData from '@/lib/project';
 
 const PortfolioSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  // Get 6 most recent projects across all categories
+  const recentProjects = architectureData.categories
+    .flatMap(category => 
+      category.projects.map(project => ({
+        ...project,
+        category: category.name,
+        categoryImage: category.image
+      }))
+    )
+    .sort((a, b) => b.year - a.year)
+    .slice(0, 6);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,7 +64,7 @@ const PortfolioSection = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            Featured <span className="text-gold font-normal">Projects</span>
+            Recent <span className="text-gold font-normal">Projects</span>
           </h2>
           
           <div 
@@ -61,10 +75,10 @@ const PortfolioSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          {recentProjects.map((project, index) => (
             <div
-              key={index}
+              key={project.id}
               className={`transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
@@ -73,7 +87,7 @@ const PortfolioSection = () => {
               <Card className="group overflow-hidden border border-border hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 bg-card">
                 <div className="relative h-80 overflow-hidden">
                   <img 
-                    src={project.image} 
+                    src={project.images[0]} 
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -86,15 +100,34 @@ const PortfolioSection = () => {
                     <h5 className="text-white text-xl font-heading mb-2 font-bold">
                       {project.title} · {project.year}
                     </h5>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {project.description}
+                    <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">
+                      {project.philosophy}
                     </p>
+                    <div className="mt-3 text-gray-400 text-xs">
+                      <span>{project.location}</span> · <span>{project.client}</span>
+                    </div>
                   </div>
                 </div>
               </Card>
             </div>
           ))}
         </div>
+
+        {/* View All Button */}
+        <div 
+          className={`text-center mt-12 transition-all duration-700 delay-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
+          <Link
+            to="/categories"
+            className="group inline-flex items-center text-gold font-semibold transition-all duration-500 hover:gap-4"
+          >
+            <span>View All Projects</span>
+            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
+
       </div>
     </section>
   );
