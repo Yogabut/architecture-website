@@ -56,7 +56,7 @@ const HeaderSection: React.FC = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 flex h-full items-center">
+            <div className="relative z-10 flex h-full items-end bottom-8">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div 
                         className="max-w-3xl"
@@ -68,7 +68,7 @@ const HeaderSection: React.FC = () => {
                         {/* Title dengan Fade In Animation */}
                         <h1 
                             key={`title-${currentSlide.id}`}
-                            className="mb-4 text-5xl font-bold text-white sm:text-6xl lg:text-7xl animate-[fadeInUp_0.8s_ease-out]"
+                            className="mb-4 text-4xl font-bold text-white sm:text-6xl lg:text-7xl animate-[fadeInUp_0.8s_ease-out]"
                         >
                             {currentSlide.title}
                         </h1>
@@ -76,7 +76,7 @@ const HeaderSection: React.FC = () => {
                         {/* Subtitle */}
                         <h2 
                             key={`subtitle-${currentSlide.id}`}
-                            className="mb-6 text-2xl text-gray-200 sm:text-3xl lg:text-4xl animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+                            className="mb-6 text-xl text-gray-200 sm:text-3xl lg:text-4xl animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
                         >
                             {currentSlide.Subtitle}
                         </h2>
