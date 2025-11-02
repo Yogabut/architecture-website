@@ -18,7 +18,7 @@ const PortfolioSection = () => {
       }))
     )
     .sort((a, b) => b.year - a.year)
-    .slice(0, 6);
+    .slice(0, 9);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

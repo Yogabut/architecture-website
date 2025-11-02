@@ -7,20 +7,28 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const scrollToSection = (id: string) => {
-    if (location.pathname !== "/") {
-      navigate("/", { replace: false });
+  const menuItems = [
+    { name: "About", path: "/about", type: "link" },
+    { name: "Services", path: "/services", type: "link" },
+    { name: "Portfolio", path: "/categories", type: "link" },
+    { name: "Testimonial", path: "/testimonial", type: "link" },
+    { name: "Contact", path: "contact", type: "section" },
+  ];
 
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const scrollToContact = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
       setTimeout(() => {
-        const element = document.getElementById(id);
+        const element = document.getElementById("contact");
         if (element) element.scrollIntoView({ behavior: "smooth" });
-      }, 600);
+      }, 100);
     } else {
-      const element = document.getElementById(id);
+      const element = document.getElementById("contact");
       if (element) element.scrollIntoView({ behavior: "smooth" });
     }
-
-    setIsMenuOpen(false);
+    closeMenu();
   };
 
   return (
@@ -34,15 +42,29 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {["about", "services", "portfolio", "process", "contact"].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="text-sm font-medium text-gold hover:text-amber-600 transition-colors"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
+            {menuItems.map((item) => 
+              item.type === "section" ? (
+                <button
+                  key={item.name}
+                  onClick={scrollToContact}
+                  className="text-sm font-medium text-gold hover:text-amber-600 transition-colors"
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors ${
+                    location.pathname === item.path
+                      ? "text-amber-600"
+                      : "text-gold hover:text-amber-600"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,15 +79,30 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-3 border-t border-slate-800/40 bg-slate-950/70 backdrop-blur-md rounded-b-xl">
-            {["about", "services", "portfolio", "process", "contact"].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="block w-full text-right py-2 text-sm font-medium text-gold hover:text-amber-600 transition-colors pr-2"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
+            {menuItems.map((item) =>
+              item.type === "section" ? (
+                <button
+                  key={item.name}
+                  onClick={scrollToContact}
+                  className="block w-full text-right py-2 text-sm font-medium text-gold hover:text-amber-600 transition-colors pr-2"
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={closeMenu}
+                  className={`block w-full text-right py-2 text-sm font-medium transition-colors pr-2 ${
+                    location.pathname === item.path
+                      ? "text-amber-600"
+                      : "text-gold hover:text-amber-600"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
         )}
       </div>

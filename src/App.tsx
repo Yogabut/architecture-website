@@ -9,6 +9,9 @@ import Footer from "./components/Footer";
 import CategoryPage from "./pages/Category";
 import CategoryProjectsPage from "./pages/Projects";
 import ProjectDetailPage from "./pages/ProjectDetails";
+import AboutPage from "./pages/About";
+import ServicesPage from "./pages/Services";
+import TestimonialPage from "./pages/Testimonial";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollTop";
 
@@ -24,6 +27,9 @@ const App = () => (
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/testimonial" element={<TestimonialPage />} />
           <Route path="/categories" element={<CategoryPage />} />
           <Route path="/categories/:categoryId" element={<CategoryProjectsPage />} />
           <Route path="/categories/:categoryId/projects/:projectId" element={<ProjectDetailPage />} />
